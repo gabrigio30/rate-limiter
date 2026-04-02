@@ -41,19 +41,15 @@ def test_different_users_are_independent(limiter):
 def test_tokens_refill_over_time(config, backend):
     fast_config = RateLimiterConfig(limit=2, window=2)
     fast_limiter = TokenBucket(fast_config, backend)
-
     assert fast_limiter.is_allowed('user_1') is True
     assert fast_limiter.is_allowed('user_1') is True
     assert fast_limiter.is_allowed('user_1') is False
-
     time.sleep(2)
-
     assert fast_limiter.is_allowed('user_1') is True
 
 def test_capacity_limits_burst(backend):
     config = RateLimiterConfig(limit=10, window=10, capacity=3)
     limiter = TokenBucket(config, backend)
-
     assert limiter.is_allowed('user_1') is True
     assert limiter.is_allowed('user_1') is True
     assert limiter.is_allowed('user_1') is True
