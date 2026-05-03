@@ -3,9 +3,25 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "distributed-rate-limiter"
+name = "fastapi-rate-limiter"
 version = "0.1.0"
-requires-python = ">=3.10"
+requires-python = ">=3.11"
+description = "Production-grade Redis-backed distributed rate limiting library for Python with FastAPI middleware"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [
+    { name = "Gabriele Giordanelli", email = "gab.giordanell@gmail.com" }
+]
+keywords = ["rate-limiting", "redis", "fastapi", "distributed-systems"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
 dependencies = [
     "redis>=5.0",
     "fastapi>=0.110",
@@ -18,6 +34,10 @@ dev = [
     "pytest-asyncio>=0.23",
     "httpx>=0.27",
 ]
+
+[project.urls]
+Homepage = "https://github.com/gabrigio30/rate-limiter"
+Repository = "https://github.com/gabrigio30/rate-limiter"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src"]
