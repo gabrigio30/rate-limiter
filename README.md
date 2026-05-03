@@ -106,8 +106,8 @@ rate-limiter/
 **Requirements:** Python 3.11+, Redis 7+
 
 ```bash
-git clone https://github.com/gabrigio30/distributed-rate-limiter
-cd distributed-rate-limiter
+git clone https://github.com/gabrigio30/rate-limiter
+cd rate-limiter
 python -m venv .venv && source .venv/bin/activate
 pip install -e ".[dev]"
 ```
@@ -126,8 +126,7 @@ docker compose up -d
 
 ```python
 from fastapi import FastAPI
-from src.middleware.fastapi import RateLimiterMiddleware
-from src.config import RateLimiterConfig
+from src import RateLimiterMiddleware, RateLimiterConfig
 
 app = FastAPI()
 
@@ -154,9 +153,7 @@ Requests exceeding the limit receive a `429 Too Many Requests` response:
 ### Directly
 
 ```python
-from src.backends.redis_backend import RedisBackend
-from src.config import RateLimiterConfig
-from src.algorithms.sliding_window_counter import SlidingWindowCounter
+from src import RedisBackend, RateLimiterConfig, SlidingWindowCounter
 
 backend = RedisBackend(host="localhost", port=6379)
 config = RateLimiterConfig(limit=100, window=60)
