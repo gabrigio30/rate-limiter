@@ -1,0 +1,30 @@
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Pycharm
+.idea/
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Build and distribution
+dist/
+build/
+*.egg-info/
+
+# pytest cache
+.pytest_cache/
+
+# Coverage reports
+.coverage
+htmlcov/
+
+# macOS
+.DS_Store
+
+# Environment variables
+.env

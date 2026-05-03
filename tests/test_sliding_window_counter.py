@@ -1,15 +1,6 @@
 import time
 import pytest
-from src.backends.redis_backend import RedisBackend
-from src.config import RateLimiterConfig
-from src.algorithms.sliding_window_counter import SlidingWindowCounter
-
-@pytest.fixture(autouse=True)
-def flush_redis():
-    backend = RedisBackend()
-    backend.client.flushall()
-    yield
-    backend.client.flushall()
+from src import RedisBackend, RateLimiterConfig, SlidingWindowCounter
 
 @pytest.fixture
 def backend():
