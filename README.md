@@ -1,4 +1,8 @@
-# Distributed Rate Limiter
+# Atomic Rate Limiter
+
+![PyPI](https://img.shields.io/pypi/v/atomic-rate-limiter)
+![Python](https://img.shields.io/pypi/pyversions/atomic-rate-limiter)
+![License](https://img.shields.io/pypi/l/atomic-rate-limiter)
 
 This project is a Redis-backed rate limiting library for Python, implementing three algorithms with atomic distributed guarantees. Designed as a plug-and-play FastAPI middleware that works correctly across multiple application instances.
 
@@ -106,16 +110,23 @@ rate-limiter/
 **Requirements:** Python 3.11+, Redis 7+
 
 ```bash
-git clone https://github.com/gabrigio30/rate-limiter
-cd rate-limiter
-python -m venv .venv && source .venv/bin/activate
-pip install -e ".[dev]"
+pip install atomic-rate-limiter
 ```
 
 Start Redis via Docker:
 
 ```bash
 docker compose up -d
+```
+
+### Development Installation
+For local development and running tests:
+
+```bash
+git clone https://github.com/gabrigio30/rate-limiter
+cd rate-limiter
+python -m venv .venv && source .venv/bin/activate
+pip install -e ".[dev]"
 ```
 
 ---
