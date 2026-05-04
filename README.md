@@ -116,7 +116,7 @@ pip install atomic-rate-limiter
 Requires Redis 7+. Start Redis via Docker:
 
 ```bash
-docker compose up -d
+docker run -d -p 6379:6379 redis:7-alpine
 ```
 
 ### Development Installation
@@ -128,6 +128,12 @@ git clone https://github.com/gabrigio30/rate-limiter
 cd rate-limiter
 python -m venv .venv && source .venv/bin/activate
 pip install -e ".[dev]"
+```
+
+Requires Redis 7+. Start Redis via Docker:
+
+```bash
+docker compose up -d
 ```
 
 ---
