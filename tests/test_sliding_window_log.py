@@ -1,6 +1,6 @@
 import time
 import pytest
-from src import RedisBackend, RateLimiterConfig, SlidingWindowLog
+from atomic_rate_limiter import RedisBackend, RateLimiterConfig, SlidingWindowLog
 
 @pytest.fixture
 def backend():

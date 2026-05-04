@@ -1,7 +1,7 @@
 import pytest
 from fastapi import FastAPI
 from fastapi.testclient import TestClient
-from src import RateLimiterMiddleware, RateLimiterConfig, RedisBackend
+from atomic_rate_limiter import RateLimiterMiddleware, RateLimiterConfig, RedisBackend
 
 @pytest.fixture
 def app():

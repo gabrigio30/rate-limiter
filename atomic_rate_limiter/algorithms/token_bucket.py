@@ -1,6 +1,6 @@
 import time
-from ..backends.redis_backend import RedisBackend
-from ..config import RateLimiterConfig
+from atomic_rate_limiter.backends.redis_backend import RedisBackend
+from atomic_rate_limiter.config import RateLimiterConfig
 
 SCRIPT = """
 local key = KEYS[1]

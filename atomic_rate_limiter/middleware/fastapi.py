@@ -1,11 +1,11 @@
 from fastapi import FastAPI, Request, Response
 from starlette.middleware.base import BaseHTTPMiddleware
 from starlette.responses import JSONResponse
-from src.backends.redis_backend import RedisBackend
-from src.config import RateLimiterConfig
-from src.algorithms.token_bucket import TokenBucket
-from src.algorithms.sliding_window_log import SlidingWindowLog
-from src.algorithms.sliding_window_counter import SlidingWindowCounter
+from atomic_rate_limiter.backends.redis_backend import RedisBackend
+from atomic_rate_limiter.config import RateLimiterConfig
+from atomic_rate_limiter.algorithms.token_bucket import TokenBucket
+from atomic_rate_limiter.algorithms.sliding_window_log import SlidingWindowLog
+from atomic_rate_limiter.algorithms.sliding_window_counter import SlidingWindowCounter
 
 ALGORITHMS = {
     "token_bucket": TokenBucket,

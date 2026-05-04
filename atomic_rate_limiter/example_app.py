@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from src.middleware.fastapi import RateLimiterMiddleware
+from atomic_rate_limiter.middleware.fastapi import RateLimiterMiddleware
 from src.config import RateLimiterConfig
 
 app = FastAPI()

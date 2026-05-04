@@ -2,11 +2,11 @@ import time
 import threading
 import statistics
 from dataclasses import dataclass
-from src import RedisBackend
-from src import RateLimiterConfig
-from src import TokenBucket
-from src import SlidingWindowLog
-from src import SlidingWindowCounter
+from atomic_rate_limiter import RedisBackend
+from atomic_rate_limiter import RateLimiterConfig
+from atomic_rate_limiter import TokenBucket
+from atomic_rate_limiter import SlidingWindowLog
+from atomic_rate_limiter import SlidingWindowCounter
 
 # ------ Configuration ------
 LIMIT = 100

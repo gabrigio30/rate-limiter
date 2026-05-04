@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "atomic-rate-limiter"
-version = "0.1.0"
+version = "0.1.1"
 requires-python = ">=3.11"
 description = "Production-grade Redis-backed distributed rate limiting library for Python with FastAPI middleware."
 readme = "README.md"
@@ -40,4 +40,4 @@ Homepage = "https://github.com/gabrigio30/rate-limiter"
 Repository = "https://github.com/gabrigio30/rate-limiter"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src"]
+packages = ["atomic_rate_limiter"]

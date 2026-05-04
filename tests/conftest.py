@@ -1,5 +1,5 @@
 import pytest
-from src import RedisBackend
+from atomic_rate_limiter import RedisBackend
 
 @pytest.fixture(autouse=True)
 def flush_redis():

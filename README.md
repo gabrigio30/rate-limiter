@@ -107,19 +107,20 @@ rate-limiter/
 
 ## Installation
 
-**Requirements:** Python 3.11+, Redis 7+
+### Via PyPI (Recommended)
 
 ```bash
 pip install atomic-rate-limiter
 ```
 
-Start Redis via Docker:
+Requires Redis 7+. Start Redis via Docker:
 
 ```bash
 docker compose up -d
 ```
 
 ### Development Installation
+
 For local development and running tests:
 
 ```bash
@@ -136,15 +137,14 @@ pip install -e ".[dev]"
 ### As FastAPI Middleware
 
 ```python
-from fastapi import FastAPI
-from src import RateLimiterMiddleware, RateLimiterConfig
+from atomic_rate_limiter import RateLimiterMiddleware, RateLimiterConfig
 
 app = FastAPI()
 
 app.add_middleware(
     RateLimiterMiddleware,
     config=RateLimiterConfig(limit=100, window=60),
-    algorithm="token_bucket",   # or "sliding_window_log" / "sliding_window_counter"
+    algorithm="token_bucket",
 )
 
 @app.get("/")
@@ -152,19 +152,10 @@ async def root():
     return {"message": "ok"}
 ```
 
-Requests exceeding the limit receive a `429 Too Many Requests` response:
-
-```json
-{
-  "error": "Too many requests",
-  "detail": "Rate limit exceeded. Please try again later."
-}
-```
-
 ### Directly
 
 ```python
-from src import RedisBackend, RateLimiterConfig, SlidingWindowCounter
+from atomic_rate_limiter import RedisBackend, RateLimiterConfig, SlidingWindowCounter
 
 backend = RedisBackend(host="localhost", port=6379)
 config = RateLimiterConfig(limit=100, window=60)
