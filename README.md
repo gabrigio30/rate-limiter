@@ -1,6 +1,6 @@
 # Atomic Rate Limiter
 
-![PyPI](https://img.shields.io/pypi/v/atomic-rate-limiter)
+![PyPI](https://img.shields.io/pypi/v/atomic-rate-limiter?cacheSeconds=0)
 ![Python](https://img.shields.io/pypi/pyversions/atomic-rate-limiter)
 ![License](https://img.shields.io/pypi/l/atomic-rate-limiter)
 
